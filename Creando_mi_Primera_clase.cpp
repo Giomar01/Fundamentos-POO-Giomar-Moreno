@@ -1,16 +1,16 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 
 
 class Coche{
 
-private:
+public:
     //Atributos
 
-    //std::string fabricante;
+    std::string fabricante;
     int cilindraje;
     int potencia;
-    //std::string color;
+    std::string color;
     double precio;
 
     //Metodos
@@ -19,18 +19,34 @@ private:
 
         std::cout << "El coche esta encendido" << std::endl;
     }
-     void acelerar(){
+    void acelerar(){
 
         std::cout << "El coche esta en marcha" << std::endl;
     }
-     void frenar(){
+    void frenar(){
 
-        std::cout << "El coche se detuvo" << std::endl;
+        std::cout << "El coche freno" << std::endl;
+    }
+    void girar(){
+        std::cout << "El coche giro" << std::endl;
+    }
+    void Setfabricante(std::string fabricante){
+        this->fabricante = fabricante;
+    }
+    std::string Getfabricante(){
+        return fabricante;
     }
 };
 
 int main(){
 
-    Coche Coche;
+    //Primer objeto
+    Coche CocheJose;
+    //Segundo objeto
+    Coche CocheMaria;
+
+    CocheJose.Setfabricante("Toyota");
+
+    std::cout << "El fabricante es: " <<  CocheJose.Getfabricante() << std::endl;
     return 0;
 }
