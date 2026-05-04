@@ -15,7 +15,7 @@ class Vehiculo{
         std::cout << "El vehiculo es modelo" << std::endl;
     }
     void setVelocidadMaxima(int v){
-        this->VelocidadMaxima= v
+        this->VelocidadMaxima= v;
     }
    
 };
@@ -26,15 +26,18 @@ class Vehiculo{
             std::cout << "motocicleta" << std::endl;
         }
         void mostrarVelocidadmaxima(){
-            std::cout << ""
+            std::cout << "Velocidad maxima: " << VelocidadMaxima << std::endl;
         }
     };
     int main(){
         Moto motoJuan;
 
         motoJuan.setModelo(2005);
+        motoJuan.setVelocidadMaxima(180);
         motoJuan.getModelo();
         motoJuan.mostrarTipo();
+        motoJuan.mostrarVelocidadmaxima();
+
 
         return 0;
     }
