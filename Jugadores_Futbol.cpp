@@ -37,7 +37,7 @@ class Jugador : public EquipoFutbol{
         this->posicion = p;
     }
     void mostrarInfo(){
-        std::cout << getNombre() << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Goles anotados: " << this->golesAnotados << std::endl << "Posicion: " << this->posicion << std::endl;
+        std::cout << "--- Equipo Jugador ---" << std::endl << getNombre() << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Goles anotados: " << this->golesAnotados << std::endl << "Posicion: " << this->posicion << std::endl;
     }
 };
 
@@ -57,7 +57,7 @@ class Entrenador : public EquipoFutbol{
     }
 
     void mostrarInfo() {
-        std::cout << "--- ENTRENADOR ---" << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Anios de experiencia: " << this->aniosexperiencia << std::endl << "Equipo dirigido: " << this->equipoDirigido << std::endl;
+        std::cout << "--- Equipo Entrenador ---" << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Anios de experiencia: " << this->aniosexperiencia << std::endl << "Equipo dirigido: " << this->equipoDirigido << std::endl;
     }
 };
 
@@ -65,5 +65,31 @@ int main(){
     Jugador Jugador;
     Entrenador Entrenador;
 
+    Jugador.setNombre("Real Madrid");
+    Jugador.setPuntosTemporada(40);
+    Jugador.setGolesanotados(20);
+    Jugador.setPosicion("Delantero");
+
     
+    Entrenador.setPuntosTemporada(30);
+    Entrenador.setAniosExperiencia(18);
+    Entrenador.setEquipoDirigido("Barcelona");
+
+    
+    Jugador.mostrarInfo();
+    Entrenador.mostrarInfo();
+
+    std::cout << "---COMPARACION---" << std::endl;
+
+    if(Jugador.getPuntosTemporada() > Entrenador.getPuntosTemporada()){
+        std::cout << "El equipo del jugador tiene mas puntos" << std::endl;
+    }
+    else if(Jugador.getPuntosTemporada() < Entrenador.getPuntosTemporada()){
+         std::cout << "El equipo del Entrenador tiene mas puntos" << std::endl;
+    }
+    else{
+         std::cout << "Los dos equipos tuvieron los mismos puntos." << std::endl;
+    } 
+
+    return 0;
 }
