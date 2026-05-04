@@ -17,18 +17,24 @@ class EquipoFutbol{
     void setPuntosTemporada(int numero){
         this->puntosTemporada=numero;
     }
-    std::string getNombre(){
+    int getPuntosTemporada(){
         return puntosTemporada;
 
     }
 };
 
 class Jugador : public EquipoFutbol{
-    public:
+    private:
     int golesAnotados;
     std::string posicion;
 
+    public:
+
+    void setGolesanotados(int ng){
+        this->golesAnotados =ng;
+    }
+    int
     void mostrarInfo(){
-        std::cout << 
+        std::cout << this->nombre << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Goles anotados: " << this->golesAnotados << std::endl << "Posicion: " this->posicion << std:endl;
     }
 };
