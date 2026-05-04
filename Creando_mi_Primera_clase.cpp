@@ -36,6 +36,12 @@ public:
     std::string Getfabricante(){
         return fabricante;
     }
+    void SetCilindraje(int cilindraje){
+        this->cilindraje = cilindraje;
+    }
+    int GetCilindraje(){
+        return cilindraje;
+    }
 };
 
 int main(){
@@ -45,8 +51,15 @@ int main(){
     //Segundo objeto
     Coche CocheMaria;
 
-    CocheJose.Setfabricante("Toyota");
-
+    /*CocheJose.Setfabricante("Toyota");
+    CocheJose.setCilindraje(1600);
     std::cout << "El fabricante es: " <<  CocheJose.Getfabricante() << std::endl;
+    std::cout << "El cilindraje: " << CocheJose.GetCilindraje() << std::endl;
+    */
+   Coche* ptrCocheJose = &CocheJose;
+   Coche* ptrCocheMaria = &CocheMaria;
+
+   ptrCocheJose->SetCilindraje(1600);
+   std::cout << "El cilindraje es: " << ptrCocheJose->GetCilindraje() << std::endl;
     return 0;
 }
