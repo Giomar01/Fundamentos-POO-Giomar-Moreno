@@ -33,8 +33,37 @@ class Jugador : public EquipoFutbol{
     void setGolesanotados(int ng){
         this->golesAnotados =ng;
     }
-    int
+    void setPosicion(std::string p) {
+        this->posicion = p;
+    }
     void mostrarInfo(){
-        std::cout << this->nombre << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Goles anotados: " << this->golesAnotados << std::endl << "Posicion: " this->posicion << std:endl;
+        std::cout << getNombre() << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Goles anotados: " << this->golesAnotados << std::endl << "Posicion: " << this->posicion << std::endl;
     }
 };
+
+class Entrenador : public EquipoFutbol{
+    private:
+    int aniosexperiencia;
+    std::string equipoDirigido;
+
+    public:
+
+    void setAniosExperiencia(int a) {
+        this->aniosexperiencia = a;
+    }
+
+    void setEquipoDirigido(std::string e) {
+        this->equipoDirigido = e;
+    }
+
+    void mostrarInfo() {
+        std::cout << "--- ENTRENADOR ---" << std::endl << "Puntos por temporada: " << this->puntosTemporada << std::endl << "Anios de experiencia: " << this->aniosexperiencia << std::endl << "Equipo dirigido: " << this->equipoDirigido << std::endl;
+    }
+};
+
+int main(){
+    Jugador Jugador;
+    Entrenador Entrenador;
+
+    
+}
