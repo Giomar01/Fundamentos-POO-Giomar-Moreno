@@ -7,8 +7,10 @@ class Product{
     int price;
     int amount;
     
-    public:
+    protected:
+    int total;
 
+    public:
     void setName(std::string n){
         this->name=n;
     }
@@ -27,4 +29,34 @@ class Product{
     int getAmount(){
         return amount;
     } 
+    int total(int c, int d){
+        return c*d;
+    }
 };
+
+class Discount : public Product{
+    
+    private:
+    int discount;
+    
+    public:
+    int price_disc;
+    void setDiscount(int des){
+        this->discount= des;
+    }
+    int getDiscount(){
+        return discount;
+    }
+    int price_disc(int total, int discount){
+        return total*discount;
+    }
+};
+
+int main(){
+    
+    Product product1;
+    Discount product_desc;
+    product1.setName("Iphone");
+    product1.getName();
+    std::cout << "Nombre: " <<
+}
